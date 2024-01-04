@@ -11,7 +11,5 @@ if __name__ == "__main__":
         print("{:d}: {:s}".format(i, arguments[i-1]))
     else:
         print("{:d} arguments:".format(number_of_arguments))
-        for i in range (1, number_of_arguments+1):
-        #while i <= number_of_arguments:
+        for i in range(1, number_of_arguments+1):
             print("{:d}: {:s}".format(i, arguments[i-1]))
-        #    i = i + 1
