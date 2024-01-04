@@ -25,6 +25,6 @@ if __name__ == "__main__":
                 res = mul(first_digit, second_digit)
             elif operator == "/":
                 res = div(first_digit, second_digit)
-                
-            print("{:d} {:s} {:d} = {:d}".format(first_digit, operator, second_digit, res))
+            print("{:d} {:s} {:d} = {:d}"
+                  .format(first_digit, operator, second_digit, res))
             exit(0)
