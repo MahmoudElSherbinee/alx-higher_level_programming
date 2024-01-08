@@ -12,17 +12,19 @@ int is_palindrome(listint_t **head)
 	listint_t *fast, *slow, *secondHalf;
 	int palindrome = 1;
 
-	/* Find the center of the list */
+    /* Find the center of the list using the slow and fast pointers */
 	slow = fast = *head;
 	while (fast && fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
 	}
+	/* Determine the starting point of the second half of the list */
+
 	if (fast == NULL)
-		secondHalf = slow;
+		secondHalf = slow; /* Even number of nodes */
 	else
-		secondHalf = slow->next;
+		secondHalf = slow->next; /* Odd number of nodes */
 
 	/* Reverse the second half of the list */
 	slow = NULL;
@@ -35,20 +37,20 @@ int is_palindrome(listint_t **head)
 	}
 	secondHalf = slow;
 
-	/* Compare the first and second parts */
+    /* Compare the first and second parts of the list */
 	slow = *head;
 	fast = secondHalf;
 	while (slow && fast)
 	{
 		if (slow->n != fast->n)
 		{
-			palindrome = 0;
+			palindrome = 0; /* Not a palindrome if elements don't match */
 			break;
 		}
 		slow = slow->next;
 		fast = fast->next;
 	}
-	/* Reverse the second part and link it back to the first part */
+    /* Reverse the second part of the list again and link it back to the first part */
 	slow = NULL;
 	while (secondHalf != NULL)
 	{
@@ -58,6 +60,6 @@ int is_palindrome(listint_t **head)
 		secondHalf = fast;
 	}
 	secondHalf = slow;
-	/* Return the result */
-	return palindrome;
+    /* Return 1 if the list is a palindrome, 0 otherwise */
+	return  (palindrome);
 }
