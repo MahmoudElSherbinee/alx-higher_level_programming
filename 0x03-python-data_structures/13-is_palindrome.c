@@ -60,6 +60,6 @@ int is_palindrome(listint_t **head)
 		secondHalf = fast;
 	}
 	secondHalf = slow;
-    /* Return 1 if the list is a palindrome, 0 otherwise */
+    /* Return 1 if the list is a palindrome*/
 	return  (palindrome);
 }
