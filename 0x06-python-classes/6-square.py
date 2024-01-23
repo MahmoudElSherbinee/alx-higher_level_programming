@@ -3,10 +3,14 @@
 
 
 class Square:
+    """ Define a private instance attr size """
 
     def __init__(self, size=0, position=(0, 0)):
+        """ Initialize size attribute. """
+
         self.size = size
         self.position = position
+        """ creating the size attr """
 
     @property
     def size(self):
