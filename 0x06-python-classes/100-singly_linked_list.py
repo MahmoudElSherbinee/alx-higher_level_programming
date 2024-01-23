@@ -34,11 +34,15 @@ class Node:
 
 
 class SinglyLinkedList:
+    """singly linked list"""
 
     def __init__(self):
+        """the linked list"""
         self.head = None
 
     def __str__(self):
+        """print statement in the main file"""
+
         my_str = ""
         node = self.head
         while node:
@@ -48,6 +52,7 @@ class SinglyLinkedList:
         return my_str[:-1]
 
     def sorted_insert(self, value):
+        """node in sorted linked list"""
         new_node = Node(value)
 
         if self.head is None:
