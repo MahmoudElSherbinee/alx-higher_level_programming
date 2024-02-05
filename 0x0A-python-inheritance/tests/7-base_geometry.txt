@@ -1,0 +1,108 @@
+# 7-base_geometry.txt
+
+===============================
+ How to use 7-base_goemetry.py
+===============================
+
+This modual contain one class `BaseGeomtry`
+
+
+Usage
+=====
+
+Importing the class from the modual
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Trying to Print the area
+::
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+
+Passing a non integere argument
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", "5")
+	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+
+Passing a negative value
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", -2)
+	Traceback (most recent call last):
+	ValueError: name must be greater than 0
+
+
+Passing a 0
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", 0)
+	Traceback (most recent call last):
+	ValueError: name must be greater than 0
+
+
+Passing a positive integer
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", 5)
+
+
+Passing wrong number of arguments
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+Passing wrong number of arguments
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+Passing a tuple
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", (5,))
+	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+
+Passing a list
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", [6])
+	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+
+Passing a boolian value
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", False)
+	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+
+Passing a dict
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", {5,7})
+	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+
+Passing a None value
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", None)
+	Traceback (most recent call last):
+	TypeError: name must be an integer
