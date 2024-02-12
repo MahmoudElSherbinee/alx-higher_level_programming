@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-""" 12-main """
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
