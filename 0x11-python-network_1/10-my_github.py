@@ -14,20 +14,16 @@ You don't need to check arguments passed to the script (number or type)
 """
 
 import requests
-from sys import argv
+import sys
+from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
-    username_input: str = argv[1]
-    access_token_input: str = argv[2]
+    input_username = sys.argv[1]
+    input_password = sys.argv[2]
+    auth_credentials = HTTPBasicAuth(input_username, input_password)
 
-    api_endpoint: str = "https://api.github.com/user"
+    api_url = "https://api.github.com/user"
+    response = requests.get(api_url, auth=auth_credentials)
 
-    response = requests.get(api_endpoint,
-                            auth=(username_input, access_token_input))
-    response_status: int = response.status_code
+    print(response.json().get("id"))
 
-    if response_status == 200:
-        user_id = response.json().get("id")
-        print(user_id)
-    else:
-        print(f"Failed to retrieve user ID. Status code: {response_status}")
