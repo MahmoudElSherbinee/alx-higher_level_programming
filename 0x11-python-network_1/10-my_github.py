@@ -28,6 +28,6 @@ if __name__ == "__main__":
 
     if response_status == 200:
         user_id = response.json().get("id")
-        print(f"User ID: {user_id}")
+        print(user_id)
     else:
         print(f"Failed to retrieve user ID. Status code: {response_status}")
