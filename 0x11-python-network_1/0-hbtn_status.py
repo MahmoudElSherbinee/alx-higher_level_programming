@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-    
+
 """
 This Python code snippet sends an HTTP GET request
 to "https://alx-intranet.hbtn.io/status" using the urllib.request module.
@@ -7,7 +7,6 @@ It then prints information about the response, including its type,
 raw bytes content, and decoded UTF-8 content.
 The script is designed to execute only when run directly as a script.
 """
-
 from urllib.request import Request, urlopen
 
 if __name__ == "__main__":
