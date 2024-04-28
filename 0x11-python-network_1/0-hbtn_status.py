@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-# Python script that fetches https://alx-intranet.hbtn.io/status
-#
-# You must use the package urllib
-# You are not allowed to import any packages other than urllib
-# The the_result of the response must be displayed
-# like the following example (tabulation before -)
-# You must use a with statement
+    
+"""
+This Python code snippet sends an HTTP GET request
+to "https://alx-intranet.hbtn.io/status" using the urllib.request module.
+It then prints information about the response, including its type,
+raw bytes content, and decoded UTF-8 content.
+The script is designed to execute only when run directly as a script.
+"""
 
 from urllib.request import Request, urlopen
 
